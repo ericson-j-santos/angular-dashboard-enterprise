@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecionando ...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var l = window.location;
+        var repo = '/angular-dashboard-enterprise'; // ajustar conforme nome do repositório
+        var path = l.pathname;
+
+        // se já estiver no repo, remove o prefixo para preservar rota SPA
+        if (path.indexOf(repo) === 0) path = path.slice(repo.length);
+
+        // Redireciona para o index com query contendo a rota principal
+        l.replace(repo + '/?=' + encondeURIComponent(path + l.search + l.hash));
+      })();
+    </script>
+  </head>
+</html>

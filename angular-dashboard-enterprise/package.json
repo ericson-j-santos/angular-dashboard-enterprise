@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:prod": "ng build --configuration production --base-href /angular-dashboard-enterprise/",
+    "deploy": "npx angular-cli-ghpages --dir=dist/angular-dashboard-enterprise/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:angular-dashboard-enterprise": "node dist/angular-dashboard-enterprise/server/server.mjs"
